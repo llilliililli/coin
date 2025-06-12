@@ -482,9 +482,9 @@
               </div>
             </div>
             <div class="table-responsive">
-              <table class="table align-items-center ">
+              <table class="table align-items-center " id="coinsTable">
                 <tbody>
-                  <tr>
+                  <!-- <tr>
                     <td class="w-30">
                       <div class="d-flex px-2 py-1 align-items-center">
                         <div>
@@ -669,7 +669,7 @@
                         <h6 class="text-sm mb-0" id="yycoin_rate">0%</h6>
                       </div>
                     </td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
             </div>
@@ -996,62 +996,280 @@
   <script src="./argon-dashboard-master/argon-dashboard-master/assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="./argon-dashboard-master/argon-dashboard-master/assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="./argon-dashboard-master/argon-dashboard-master/assets/js/plugins/chartjs.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
 
     function _chageTime(time){
         console.log('Time :: ',time)
 
-        if(time == '1430'){
+        var path = './data/'+time+'.json'
 
-            coinsUpdate(time)
-            showGraph(time)
-        }
+        var dataList = [];
+
+        if(time == '1415'){
+
+          //console.log('path :: ',path)
+
+          dataList = [
+            [30000,0,0,0,0,0,0,0,0],
+            [30000,0,0,0,0,0,0,0,0],
+            [30000,0,0,0,0,0,0,0,0],
+            [30000,0,0,0,0,0,0,0,0],
+            [30000,0,0,0,0,0,0,0,0],
+            [30000,0,0,0,0,0,0,0,0]
+          ]
+
+          coinsUpdate(time,path)
+          showGraph(time,dataList)
+        }else if(time == '1430'){
+
+            //console.log('path :: ',path)
+
+            dataList = [
+              [30000,26900,0,0,0,0,0,0,0],
+              [30000,70000,0,0,0,0,0,0,0],
+              [30000,30000,0,0,0,0,0,0,0],
+              [30000,50000,0,0,0,0,0,0,0],
+              [30000,20000,0,0,0,0,0,0,0],
+              [30000,50000,0,0,0,0,0,0,0]
+            ]
+
+            coinsUpdate(time,path)
+            showGraph(time,dataList)
+        }else if(time == '1445'){
+
+          //console.log('path :: ',path)
+
+          dataList = [
+            [30000,26900,69200,0,0,0,0,0,0],
+            [30000,70000,40000,0,0,0,0,0,0],
+            [30000,30000,50000,0,0,0,0,0,0],
+            [30000,50000,20000,0,0,0,0,0,0],
+            [30000,20000,80000,0,0,0,0,0,0],
+            [30000,50000,100000,0,0,0,0,0,0]
+          ]
+
+          coinsUpdate(time,path)
+          showGraph(time,dataList)
+        }else if(time == '1500'){
+
+          //console.log('path :: ',path)
+
+          dataList = [
+            [30000,26900,69200,92600,0,0,0,0,0],
+            [30000,70000,40000,10000,0,0,0,0,0],
+            [30000,30000,50000,70000,0,0,0,0,0],
+            [30000,50000,20000,70000,0,0,0,0,0],
+            [30000,20000,80000,40000,0,0,0,0,0],
+            [30000,50000,100000,30000,0,0,0,0,0]
+          ]
+
+          coinsUpdate(time,path)
+          showGraph(time,dataList)
+        }else if(time == '1515'){
+
+          //console.log('path :: ',path)
+
+          dataList = [
+            [30000,26900,69200,92600,62900,0,0,0,0],
+            [30000,70000,40000,10000,30000,0,0,0,0],
+            [30000,30000,50000,70000,70000,0,0,0,0],
+            [30000,50000,20000,70000,40000,0,0,0,0],
+            [30000,20000,80000,40000,50000,0,0,0,0],
+            [30000,50000,100000,30000,70000,0,0,0,0]
+          ]
+
+          coinsUpdate(time,path)
+          showGraph(time,dataList)
+        }else if(time == '1530'){
+
+          //console.log('path :: ',path)
+
+          dataList = [
+            [30000,26900,69200,92600,62900,26900,0,0,0],
+            [30000,70000,40000,10000,30000,60000,0,0,0],
+            [30000,30000,50000,70000,70000,60000,0,0,0],
+            [30000,50000,20000,70000,40000,70000,0,0,0],
+            [30000,20000,80000,40000,50000,30000,0,0,0],
+            [30000,50000,100000,30000,70000,30000,0,0,0]
+          ]
+
+          coinsUpdate(time,path)
+          showGraph(time,dataList)
+        }else if(time == '1545'){
+
+          //console.log('path :: ',path)
+
+          dataList = [
+            [30000,26900,69200,92600,62900,26900,69200,0,0],
+            [30000,70000,40000,10000,30000,60000,10000,0,0],
+            [30000,30000,50000,70000,70000,60000,50000,0,0],
+            [30000,50000,20000,70000,40000,70000,40000,0,0],
+            [30000,20000,80000,40000,50000,30000,90000,0,0],
+            [30000,50000,100000,30000,70000,30000,70000,0,0]
+          ]
+
+          coinsUpdate(time,path)
+          showGraph(time,dataList)
+        }else if(time == '1600'){
+
+          //console.log('path :: ',path)
+
+          dataList = [
+            [30000,26900,69200,92600,62900,26900,69200,81500,0],
+            [30000,70000,40000,10000,30000,60000,10000,10000,0],
+            [30000,30000,50000,70000,70000,60000,50000,60000,0],
+            [30000,50000,20000,70000,40000,70000,40000,70000,0],
+            [30000,20000,80000,40000,50000,30000,90000,10000,0],
+            [30000,50000,100000,30000,70000,30000,70000,60000,0]
+          ]
+
+          coinsUpdate(time,path)
+          showGraph(time,dataList)
+        }else if(time == '1615'){
+
+          //console.log('path :: ',path)
+
+          dataList = [
+            [30000,26900,69200,92600,62900,26900,69200,81500,100000,0],
+            [30000,70000,40000,10000,30000,60000,10000,10000,90000,0],
+            [30000,30000,50000,70000,70000,60000,50000,60000,70000,0],
+            [30000,50000,20000,70000,40000,70000,40000,70000,40000,0],
+            [30000,20000,80000,40000,50000,30000,90000,10000,90000,0],
+            [30000,50000,100000,30000,70000,30000,70000,60000,80000,0]
+          ]
+
+          coinsUpdate(time,path)
+          showGraph(time,dataList)
+        }else if(time == '1630'){
+
+          //console.log('path :: ',path)
+
+          dataList = [
+            [30000,26900,69200,92600,62900,26900,69200,81500,100000,31500],
+            [30000,70000,40000,10000,30000,60000,10000,10000,90000,30000],
+            [30000,30000,50000,70000,70000,60000,50000,60000,70000,80000],
+            [30000,50000,20000,70000,40000,70000,40000,70000,40000,10000],
+            [30000,20000,80000,40000,50000,30000,90000,10000,90000,10000],
+            [30000,50000,100000,30000,70000,30000,70000,60000,80000,40000]
+          ]
+
+          coinsUpdate(time,path)
+          showGraph(time,dataList)  
+        }   
+
 
        
       
     }
 
-    function coinsUpdate(time){
-        //269
-        var coin269Smoney = document.getElementById('269coin_smoney');
-        var coin269Pmoney = document.getElementById('269coin_pmoney');
-        var coin269Rate = document.getElementById('269coin_rate');
-        //bb
-        var coinBBSmoney = document.getElementById('bbcoin_smoney');
-        var coinBBPmoney = document.getElementById('bbcoin_pmoney');
-        var coinBBRate = document.getElementById('bbcoin_rate');
-        //byak
-        var coinByakSmoney = document.getElementById('byakcoin_smoney');
-        var coinByakPmoney = document.getElementById('byakcoin_pmoney');
-        var coinByakRate = document.getElementById('byakcoin_rate');
-        //mm
-        var coinMMSmoney = document.getElementById('mmcoin_smoney');
-        var coinMMPmoney = document.getElementById('mmcoin_pmoney');
-        var coinMMRate = document.getElementById('mmcoin_rate');
-        //pp
-        var coinPPSmoney = document.getElementById('ppcoin_smoney');
-        var coinPPPmoney = document.getElementById('ppcoin_pmoney');
-        var coinPPRate = document.getElementById('ppcoin_rate');
-        //yy
-        var coinYYSmoney = document.getElementById('yycoin_smoney');
-        var coinYYPmoney = document.getElementById('yycoin_pmoney');
-        var coinYYRate = document.getElementById('yycoin_rate');
+    function coinsUpdate(time,path){
+
+      let coinData = "";
+
+    
 
 
+        $.getJSON(path, function (data) {
+          $("#coinsTable").empty();
+          $.each(data, function (key, value) {
+            console.log(key);
 
-         if(time == '1430'){
-          
-            coin269Smoney.innerHTML = "30000"
-            coin269Pmoney.innerHTML = "26900"
-            var coin269rate = String(Math.round((parseInt(coin269Pmoney.innerHTML)-parseInt(coin269Smoney.innerHTML) )/parseInt(coin269Smoney.innerHTML) * 100))+"%";
-            coin269Rate.innerHTML = coin269rate
-        }
+            
+
+
+            var coinRate = Math.round((parseInt(value.pmoney)-parseInt(value.smoney) )/parseInt(value.smoney) * 100);
+            
+
+            var colorSmoney = "#000000"
+            var colorPmoney = "#000000"
+            var colorRate = "#000000"
+
+            var chkPmoney = ""
+            var chkRate = ""
+
+            if (value.smoney < value.pmoney) {
+              colorPmoney = "#FF0000"
+              chkPmoney = "▲"
+            } else if (value.smoney > value.pmoney) {
+              colorPmoney = "#2478FF"
+              chkPmoney = "▼"
+            }
+
+            if (coinRate > 0) {
+                colorRate = "#FF0000"
+                chkRate = "▲"
+            } else if (coinRate < 0) {
+                colorRate = "#2478FF"
+                chkRate = "▼"
+            }
+
+
+            var imgPath = "";
+
+            if(value.title == "269코인"){
+              imgPath = "./image/269coin.PNG"
+            }else if(value.title == "빠방코인"){
+              imgPath = "./image/bbcoin.PNG"
+            }else if(value.title == "뺙코인"){
+              imgPath = "./image/byakcoin.PNG"
+            }else if(value.title == "머미코인"){
+              imgPath = "./image/mmcoin.PNG"
+            }else if(value.title == "멍멍코인"){
+              imgPath = "./image/ppcoin.PNG"
+            }else if(value.title == "융융코인"){
+              imgPath = "./image/yycoin.PNG"
+            }
+
+            coinData += `<tr> 
+                          <td class="w-30">
+                            <div class="d-flex px-2 py-1 align-items-center">
+                              <div>
+                                <img src=\"`+imgPath+`\" alt="Country flag" width="40" height="40">
+                              </div>
+                              <div class="ms-4">
+                                <p class="text-xs font-weight-bold mb-0">코인명:</p>`
+                                +'<h6 class="text-sm mb-0">'+value.title+'</h6>'
+                              +`</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="text-center">
+                              <p class="text-xs font-weight-bold mb-0">이전금액:</p>`
+                              +'<h6 class="text-sm mb-0">'+value.smoney+'</h6>'
+                            +`</div>
+                          </td>
+                          <td>
+                            <div class="text-center">
+                              <p class="text-xs font-weight-bold mb-0">현재금액:</p>`
+                              +'<h6 class="text-sm mb-0" style=\"color:' + colorPmoney + '\">'+chkPmoney + value.pmoney+'</h6>'
+                            +`</div>
+                          </td>
+                          <td class="align-middle text-sm">
+                            <div class="col text-center">
+                              <p class="text-xs font-weight-bold mb-0">수익율:</p>`
+                              +'<h6 class="text-sm mb-0" style=\"color:' + colorRate + '\">'+chkRate +coinRate+'%</h6>'
+                            +`</div>
+                          </td>
+                        </tr> `
+                        
+
+          });
+          $("#coinsTable").append(coinData);
+        });
+
+
+       
+  
 
 
     }
 
 
-    function showGraph(time){
+    function showGraph(time,dataList){
+
+
+
 
         // 차트 지우고 다시 그리기
         let chartStatus = Chart.getChart('chart-line');
@@ -1081,7 +1299,7 @@
                     backgroundColor: gradientStroke1,
                     borderWidth: 3,
                     fill: true,
-                    data: [30000, 26900, 0, 0, 0, 0, 0, 0, 0],
+                    data: dataList[0],
                     maxBarThickness: 6
                 },
                 {
@@ -1093,7 +1311,7 @@
                     backgroundColor: gradientStroke1,
                     borderWidth: 3,
                     fill: true,
-                    data: [30000, 50000, 0, 0, 0, 0, 0, 0, 0],
+                    data: dataList[1],
                     maxBarThickness: 6
                 },
                   {
@@ -1105,7 +1323,7 @@
                     backgroundColor: gradientStroke1,
                     borderWidth: 3,
                     fill: true,
-                    data: [30000, 70000, 0, 0, 0, 0, 0, 0, 0],
+                    data: dataList[2],
                     maxBarThickness: 6
                 },
                   {
@@ -1117,7 +1335,7 @@
                     backgroundColor: gradientStroke1,
                     borderWidth: 3,
                     fill: true,
-                    data: [30000, 20000, 0, 0, 0, 0, 0, 0, 0],
+                    data: dataList[3],
                     maxBarThickness: 6
                 },
                   {
@@ -1129,7 +1347,7 @@
                     backgroundColor: gradientStroke1,
                     borderWidth: 3,
                     fill: true,
-                    data: [30000, 30000, 0, 0, 0, 0, 0, 0, 0],
+                    data: dataList[4],
                     maxBarThickness: 6
                 },
                   {
@@ -1137,11 +1355,11 @@
                     tension: 0.4,
                     borderWidth: 0,
                     pointRadius: 0,
-                    borderColor: "#FF007F",
+                    borderColor: "#F29661",
                     backgroundColor: gradientStroke1,
                     borderWidth: 3,
                     fill: true,
-                    data: [30000, 70000, 0, 0, 0, 0, 0, 0, 0],
+                    data: dataList[5],
                     maxBarThickness: 6
                 }
             ],
